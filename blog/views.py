@@ -122,7 +122,7 @@ def comment_create(request,pk):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.approved_comment = True
-            comment.post = post           # Assigning post to comment
+            comment.post = post           # Assigning current post to comment
             comment.save()
             return redirect('post_detail', pk=post.pk)
     else:
